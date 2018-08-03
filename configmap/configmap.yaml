@@ -1,0 +1,41 @@
+# Esta es la descripción de nuestro configmap
+# los configmap son utilizados para proveer archivos a nuestros pods
+# por lo regular se utiliza para configuraciones
+
+apiVersion: v1  # Esta es la version del api a la cual pertenece el ConfigMap
+kind: ConfigMap # Este es el tipo de nuestro archivo
+metadata: # Definicion de la metadata de nuestro objeto
+  name: nginx
+  labels:
+    name: nginx
+data: # Aqui se especifica la data que contentra el Config Map
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Kubernetes Guatemala</title>
+    <style>
+      body {
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+      }
+      .center {
+        margin: auto;
+        width: 50%;
+        height: 200px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 10px;
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kubernetes_logo.svg/1280px-Kubernetes_logo.svg.png")
+      }
+      .adjust {
+      margin-top: 160px;
+      margin-left: 800px;            
+      }
+    </style>
+    </head>
+    <body>
+    <div class="center">
+    	<h1 class="adjust">Guatemala</h1>
+    </div>
+    </body>
+    </html>
